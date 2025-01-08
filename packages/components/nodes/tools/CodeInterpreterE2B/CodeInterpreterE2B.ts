@@ -216,7 +216,7 @@ export class E2BTool extends StructuredTool {
                                 'image/png',
                                 pngData,
                                 filename,
-                                06b211b4-9601-4f6d-8c60-22f8e0ce3b30,
+                                this.chatflowid,
                                 flowConfig!.chatId as string
                             )
                             artifacts.push({ type: 'png', data: res })
