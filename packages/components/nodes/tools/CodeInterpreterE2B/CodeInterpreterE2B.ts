@@ -80,7 +80,7 @@ class Code_Interpreter_Tools implements INode {
             schema: z.object({
                 input: z.string().describe('Python code to be executed in the sandbox environment')
             }),
-            chatflowid: '06b211b4-9601-4f6d-8c60-22f8e0ce3b30'
+            chatflowid: options.chatflowid
         })
     }
 }
@@ -124,7 +124,7 @@ export class E2BTool extends StructuredTool {
         this.name = options.name
         this.apiKey = options.apiKey
         this.schema = options.schema
-        this.chatflowid = '06b211b4-9601-4f6d-8c60-22f8e0ce3b30'
+        this.chatflowid = options.chatflowid
         this.templateCodeInterpreterE2B = options.templateCodeInterpreterE2B
         this.domainCodeInterpreterE2B = options.domainCodeInterpreterE2B
     }
@@ -135,7 +135,7 @@ export class E2BTool extends StructuredTool {
             description: options.description,
             apiKey: options.apiKey,
             schema: options.schema,
-            chatflowid: '06b211b4-9601-4f6d-8c60-22f8e0ce3b30',
+            chatflowid: options.chatflowid,
             templateCodeInterpreterE2B: options.templateCodeInterpreterE2B,
             domainCodeInterpreterE2B: options.domainCodeInterpreterE2B
         })
@@ -216,7 +216,7 @@ export class E2BTool extends StructuredTool {
                                 'image/png',
                                 pngData,
                                 filename,
-                                '06b211b4-9601-4f6d-8c60-22f8e0ce3b30',
+                                this.chatflowid,
                                 flowConfig!.chatId as string
                             )
                             artifacts.push({ type: 'png', data: res })
